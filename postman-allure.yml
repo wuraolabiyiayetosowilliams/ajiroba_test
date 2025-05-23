@@ -1,0 +1,35 @@
+name: Ajiroba Api Automation Testing Report
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  run-postman-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install Newman and Allure
+      run: |
+        npm install -g newman
+        npm install -g newman-reporter-allure
+
+    - name: Run Postman Tests
+      run: |
+        newman run postman-tests/MyCollection.json \
+          -e postman-tests/MyEnvironment.json \
+          -r allure
+
+    - name: Upload Allure Results
+      uses: actions/upload-artifact@v3
+      with:
+        name: allure-results
+        path: allure-results
