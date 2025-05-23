@@ -1,0 +1,1 @@
+Ajiroba offers a raffle draw feature that includes a diverse array of products and services across various categories including but not limited to electronics, fashion, home appliances, beauty and groceries. The platform facilitates buyer transactions, providing secure and user-friendly environment.
