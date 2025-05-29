@@ -625,7 +625,61 @@
 							"response": []
 						},
 						{
-							"name": "Sign up - Via Cart",
+							"name": "Sign up - Gender selection Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9c3f6145-a97c-43e7-afed-6eb6919a6b56",
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Verify system returns referral code for user\", function () {\r",
+											"    pm.response.to.have.jsonBody(\"referral\");\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "0cd61b4c-18fb-4741-8a81-fa593b591c74",
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "4a0ca104-2566-4f64-afbd-7d0d600f6fd1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"first_name\": \"Denny\",\r\n  \"last_name\": \"Denny\",\r\n  \"email\": \"den@yopmail.com\",\r\n  \"phone\": \"08021223345\",\r\n  \"password\": \"@Testing123\",\r\n  \"referral\": \"\",\r\n  \"address\": \"\",\r\n  \"state\": \"\",\r\n  \"lga\": \"\",\r\n  \"residential\": \"\",\r\n  \"gender\": true,\r\n  \"agree_terms\": true\r\n}\r\n  ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/v1/auth/signup/"
+							},
+							"response": []
+						},
+						{
+							"name": "Sign up - Valid details",
 							"event": [
 								{
 									"listen": "test",
