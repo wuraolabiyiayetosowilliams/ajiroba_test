@@ -775,7 +775,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"first_name\": \"Denny\",\r\n  \"last_name\": \"Denny\",\r\n  \"email\": \"den@yopmail.com\",\r\n  \"phone\": \"08021223345\",\r\n  \"password\": \"@Testing123\",\r\n  \"referral\": \"\",\r\n  \"address\": \"\",\r\n  \"state\": \"\",\r\n  \"lga\": \"\",\r\n  \"residential\": \"\",\r\n  \"gender\": true,\r\n  \"agree_terms\": true\r\n}\r\n  ",
+									"raw": "{\r\n  \"first_name\": \"{{$randomFirstName}}\", // Steve\r\n  \"last_name\": \"{{$randomLastName}}\", // Steve\r\n  \"email\": \"{{$randomUserName}}@yopmail.com\", //danish@yopmail.com\r\n  \"phone\": \"{{$randomPhoneNumber}}+1\",\r\n  \"password\": \"pass\",\r\n  \"referral\": \"HxTZ10A4\",\r\n  \"address\": \"Gbadamosi\",\r\n  \"state\": \"Lagos\",\r\n  \"lga\": \"Alimosho\",\r\n  \"residential\": \"IreOluwa Mansion\",\r\n  \"gender\": true,\r\n  \"agree_terms\": true\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
