@@ -686,9 +686,10 @@
 									"script": {
 										"id": "9c3f6145-a97c-43e7-afed-6eb6919a6b56",
 										"exec": [
-											"pm.test(\"Status code is 400 for weak password\", function () {\r",
-											"    pm.expect(status).to.be.oneOf([400]);\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
 											"});\r",
+											"\r",
 											"\r",
 											"pm.test(\"Error message should mention password complexity\", function () {\r",
 											"    pm.expect(resBody.message || \"\").to.match(/password|complexity|invalid/i);\r",
@@ -722,7 +723,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"first_name\": \"{{$randomFirstName}}\", // Steve\r\n  \"last_name\": \"{{$randomLastName}}\", // Steve\r\n  \"email\": \"{{$randomUserName}}@yopmail.com\", //danish@yopmail.com\r\n  \"phone\": \"{{$randomPhoneNumber}}+1\",\r\n  \"password\": \"pass\",\r\n  \"referral\": \"HxTZ10A4\",\r\n  \"address\": \"Gbadamosi\",\r\n  \"state\": \"Lagos\",\r\n  \"lga\": \"Alimosho\",\r\n  \"residential\": \"IreOluwa Mansion\",\r\n  \"gender\": true,\r\n  \"agree_terms\": true\r\n}\r\n  ",
+									"raw": "{\r\n  \"first_name\": \"{{$randomFirstName}}\", // Steve\r\n  \"last_name\": \"{{$randomLastName}}\", // Steve\r\n  \"email\": \"{{$randomUserName}}@yopmail.com\", //danish@yopmail.com\r\n  \"phone\": \"{{$randomPhoneNumber}}\",\r\n  \"password\": \"pass\",\r\n  \"referral\": \"HxTZ10A4\",\r\n  \"address\": \"Gbadamosi\",\r\n  \"state\": \"Lagos\",\r\n  \"lga\": \"Alimosho\",\r\n  \"residential\": \"IreOluwa Mansion\",\r\n  \"gender\": true,\r\n  \"agree_terms\": true\r\n}\r\n  ",
 									"options": {
 										"raw": {
 											"language": "json"
