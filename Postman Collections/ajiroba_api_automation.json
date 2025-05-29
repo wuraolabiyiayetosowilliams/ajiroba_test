@@ -625,7 +625,7 @@
 							"response": []
 						},
 						{
-							"name": "Sign up - Gender selection Copy",
+							"name": "Sign up - Missing fields",
 							"event": [
 								{
 									"listen": "test",
