@@ -686,12 +686,12 @@
 									"script": {
 										"id": "9c3f6145-a97c-43e7-afed-6eb6919a6b56",
 										"exec": [
-											"pm.test(\"Status code is 201\", function () {\r",
-											"    pm.response.to.have.status(201);\r",
+											"pm.test(\"Status code is 400 for weak password\", function () {\r",
+											"    pm.expect(status).to.be.oneOf([400]);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Verify system returns referral code for user\", function () {\r",
-											"    pm.response.to.have.jsonBody(\"referral\");\r",
+											"pm.test(\"Error message should mention password complexity\", function () {\r",
+											"    pm.expect(resBody.message || \"\").to.match(/password|complexity|invalid/i);\r",
 											"});\r",
 											"\r",
 											""
@@ -705,6 +705,7 @@
 									"script": {
 										"id": "0cd61b4c-18fb-4741-8a81-fa593b591c74",
 										"exec": [
+											"\r",
 											""
 										],
 										"type": "text/javascript",
@@ -721,7 +722,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"first_name\": \"Denny\",\r\n  \"last_name\": \"Denny\",\r\n  \"email\": \"den@yopmail.com\",\r\n  \"phone\": \"08021223345\",\r\n  \"password\": \"@Testing123\",\r\n  \"referral\": \"\",\r\n  \"address\": \"\",\r\n  \"state\": \"\",\r\n  \"lga\": \"\",\r\n  \"residential\": \"\",\r\n  \"gender\": true,\r\n  \"agree_terms\": true\r\n}\r\n  ",
+									"raw": "{\r\n  \"first_name\": \"{{$randomFirstName}}\", // Steve\r\n  \"last_name\": \"{{$randomLastName}}\", // Steve\r\n  \"email\": \"{{$randomUserName}}@yopmail.com\", //danish@yopmail.com\r\n  \"phone\": \"{{$randomPhoneNumber}}+1\",\r\n  \"password\": \"pass\",\r\n  \"referral\": \"HxTZ10A4\",\r\n  \"address\": \"Gbadamosi\",\r\n  \"state\": \"Lagos\",\r\n  \"lga\": \"Alimosho\",\r\n  \"residential\": \"IreOluwa Mansion\",\r\n  \"gender\": true,\r\n  \"agree_terms\": true\r\n}\r\n  ",
 									"options": {
 										"raw": {
 											"language": "json"
