@@ -746,8 +746,9 @@
 											"    pm.response.to.have.status(201);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Verify system returns referral code for user\", function () {\r",
-											"    pm.response.to.have.jsonBody(\"referral\");\r",
+											"pm.test(\"Verify response message for successful signup\", function () {\r",
+											"    const response = pm.response.json();\r",
+											"    pm.expect(response.message).to.eql(\"signup successfully, OTP sent to your mail\")\r",
 											"});\r",
 											"\r",
 											""
@@ -775,8 +776,7 @@
 											"\r",
 											"const phoneNumber = prefix + lineNumber.toString();\r",
 											"\r",
-											"pm.environment.set(\"randomNigerianPhone\", phoneNumber);\r",
-											""
+											"pm.environment.set(\"randomNigerianPhone\", phoneNumber);"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -792,7 +792,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"first_name\": \"{{$randomFirstName}}\", // Steve\r\n  \"last_name\": \"{{$randomLastName}}\", // Steve\r\n  \"email\": \"{{$randomUserName}}@yopmail.com\", //danish@yopmail.com\r\n  \"phone\": \"{{randomNigerianPhone}}\",\r\n  \"password\": \"pass\",\r\n  \"referral\": \"HxTZ10A4\",\r\n  \"address\": \"Gbadamosi\",\r\n  \"state\": \"Lagos\",\r\n  \"lga\": \"Alimosho\",\r\n  \"residential\": \"IreOluwa Mansion\",\r\n  \"gender\": true,\r\n  \"agree_terms\": true\r\n}",
+									"raw": "{\r\n  \"first_name\": \"{{$randomFirstName}}\", // Steve\r\n  \"last_name\": \"{{$randomLastName}}\", // Steve\r\n  \"email\": \"{{$randomUserName}}@yopmail.com\", //danish@yopmail.com\r\n  \"phone\": \"{{randomNigerianPhone}}\",\r\n\"password\": \"{{randomstrongPassword}}\",\r\n  \"referral\": \"HxTZ10A4\",\r\n  \"address\": \"Gbadamosi\",\r\n  \"state\": \"Lagos\",\r\n  \"lga\": \"Alimosho\",\r\n  \"residential\": \"IreOluwa Mansion\",\r\n  \"gender\": true,\r\n  \"agree_terms\": true\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
