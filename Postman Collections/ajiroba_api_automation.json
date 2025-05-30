@@ -1074,7 +1074,7 @@
 											"pm.test(\"Status code is 404\", function () {\r",
 											"    pm.response.to.have.status(404);\r",
 											"});\r",
-											"pm.test(\"Validate response message when no email is provided\", function () {\r",
+											"pm.test(\"Validate response message when a guest activate account\", function () {\r",
 											"    pm.expect(pm.response.json().message).to.eql(\"User not found\");\r",
 											"});"
 										],
@@ -1129,7 +1129,7 @@
 											"pm.test(\"Status code is 404\", function () {\r",
 											"    pm.response.to.have.status(404);\r",
 											"});\r",
-											"pm.test(\"Validate response message when no email is provided\", function () {\r",
+											"pm.test(\"Validate response message when an invalid email is entered\", function () {\r",
 											"    pm.expect(pm.response.json().message).to.eql(\"User not found\");\r",
 											"});"
 										],
