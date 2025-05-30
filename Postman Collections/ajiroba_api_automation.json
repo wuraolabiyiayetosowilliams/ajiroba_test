@@ -810,7 +810,7 @@
 					"name": "Account Verification",
 					"item": [
 						{
-							"name": "Verify Account Activation",
+							"name": "Account Activation - Valid OTP",
 							"event": [
 								{
 									"listen": "prerequest",
