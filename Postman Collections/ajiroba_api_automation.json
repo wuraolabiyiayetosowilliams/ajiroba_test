@@ -885,12 +885,34 @@
 								{
 									"listen": "prerequest",
 									"script": {
+										"id": "175124bc-998f-4116-a374-259eb83308c7",
 										"exec": [
 											""
 										],
 										"type": "text/javascript",
-										"packages": {},
-										"id": "175124bc-998f-4116-a374-259eb83308c7"
+										"packages": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "023309b3-5e32-46ef-9987-b3c2e83a5753",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"const response = pm.response.json();\r",
+											"pm.test(\"Verify the response status is failed\", function () {\r",
+											"    pm.expect(response.status).to.equal(\"failed\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Verify the response message is 'invalid OTP'\", function () {\r",
+											"    pm.expect(response.message).to.equal(\"invalid OTP\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
