@@ -845,6 +845,111 @@
 							"response": []
 						},
 						{
+							"name": "Account Activation - Expired OTP",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"id": "175124bc-998f-4116-a374-259eb83308c7"
+									}
+								}
+							],
+							"id": "2b00f325-ec9a-4980-82f0-d504c9e93432",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"otp\": \"186527\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/v1/auth/verify_account_activation/"
+							},
+							"response": []
+						},
+						{
+							"name": "Account Activation - Invalid OTP",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"id": "175124bc-998f-4116-a374-259eb83308c7"
+									}
+								}
+							],
+							"id": "59cbc894-9e3b-4e02-ab65-200ca2cc3964",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"otp\": \"186527\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/v1/auth/verify_account_activation/"
+							},
+							"response": []
+						},
+						{
+							"name": "Account Activation - No OTP",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"id": "175124bc-998f-4116-a374-259eb83308c7"
+									}
+								}
+							],
+							"id": "39f49f46-d64b-4e7d-893b-c561a8edbcf1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"otp\": \"186527\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/v1/auth/verify_account_activation/"
+							},
+							"response": []
+						},
+						{
 							"name": "Resend OTP - No Email",
 							"event": [
 								{
