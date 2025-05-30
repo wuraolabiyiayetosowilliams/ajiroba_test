@@ -942,12 +942,34 @@
 								{
 									"listen": "prerequest",
 									"script": {
+										"id": "175124bc-998f-4116-a374-259eb83308c7",
 										"exec": [
 											""
 										],
 										"type": "text/javascript",
-										"packages": {},
-										"id": "175124bc-998f-4116-a374-259eb83308c7"
+										"packages": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "195a46f1-2b4e-4204-9bdb-7857b5c6f974",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"const response = pm.response.json();\r",
+											"pm.test(\"Verify the response status is failed\", function () {\r",
+											"    pm.expect(response.status).to.equal(\"failed\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Verify the response message is 'Enter an OTP'\", function () {\r",
+											"    pm.expect(response.message).to.equal(\"Enter an OTP\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -960,7 +982,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"otp\": \"186527\"\r\n}",
+									"raw": "{\r\n    \"otp\": \"\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1194,6 +1216,11 @@
 						}
 					],
 					"id": "62145a93-e08c-4ce9-84b8-382ab0dcea76"
+				},
+				{
+					"name": "Resend OTP",
+					"item": [],
+					"id": "6b1513b3-8d49-45ac-a1a5-64c1d538f122"
 				},
 				{
 					"name": "Signin",
